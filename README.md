@@ -2,7 +2,7 @@
 
 ## Description
 
-Edx Bootcamp challeng to generate a random password based on criteria they’ve selected. 
+Edx Bootcamp challenge to generate a random password based on criteria they’ve selected. 
 
 * Generate a password when the button is clicked
   * Present a series of prompts for password criteria
