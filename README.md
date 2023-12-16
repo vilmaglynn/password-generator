@@ -19,6 +19,7 @@ Edx Bootcamp challenge to generate a random password based on criteria they’ve
 
 ## Usage
 Link to deployed page****
+https://vilmaglynn.github.io/password-generator/
 
 
 ![alt text](./assets/screenshot.png)
