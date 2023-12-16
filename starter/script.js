@@ -118,17 +118,53 @@ do {
     alert("Please select at least one option.");
   }
 } while (!(includeLowercase || includeUppercase || includeNumbers || includeSpecialChars));
+
+return {
+  length: parseInt(passwordLength),
+  includeLowercase,
+  includeUppercase,
+  includeNumbers,
+  includeSpecialChars
+};
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  let randomItem = arr[Math.floor(Math.random()*arr.length)];
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  var options = getPasswordOptions();
+  var possibleChars = [];
 
-  
+  if (options.includeLowercase) {
+    possibleChars = possibleChars.concat(lowerCasedCharacters);
+  }
+
+  if (options.includeUppercase) {
+    possibleChars = possibleChars.concat(upperCasedCharacters);
+  }
+
+  if (options.includeNumbers) {
+    possibleChars = possibleChars.concat(numericCharacters);
+  }
+
+  if (options.includeSpecialChars) {
+    possibleChars = possibleChars.concat(specialCharacters);
+  }
+
+  if (possibleChars.length === 0) {
+    alert("No character types selected. Cannot generate password.");
+    return "";
+  }
+
+  var generatedPassword = "";
+  for (var i = 0; i < options.length; i++) {
+    generatedPassword += getRandom(possibleChars);
+  }
+
+  return generatedPassword;
 }
 
 // Get references to the #generate element
@@ -146,5 +182,5 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 
-getPasswordOptions() 
-getRandom(arr)
+
+
